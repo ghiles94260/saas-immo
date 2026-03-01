@@ -12,7 +12,7 @@ export default function QuoteReminderEmail({ quoteNumber, clientName, companyNam
   const num = String(quoteNumber).padStart(4, '0')
   return (
     <Html lang="fr"><Head />
-      <Preview>⏰ Rappel : votre devis N°{num} expire dans {daysLeft} jour{daysLeft > 1 ? 's' : ''} — {companyName}</Preview>
+      <Preview>⏰ Rappel : votre devis N°{num} expire dans {String(daysLeft)} jour{daysLeft > 1 ? 's' : ''} — {companyName}</Preview>
       <Tailwind>
         <Body className="bg-zinc-100 font-sans">
           <Container className="mx-auto max-w-xl py-8 px-4">

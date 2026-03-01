@@ -54,11 +54,9 @@ export default function QuoteActions({ quote }: { quote: Quote & { quote_items: 
         <SendQuoteButton quoteId={quote.id} clientEmail={quote.client_email} status={quote.status} />
         <CreateInvoiceButton quote={quote} />
         <ScheduleButton quote={quote} />
-        {quote.status !== 'paid' && (
-          <a href={`/quotes/${quote.id}/edit`} className="flex items-center gap-2 px-3 py-2 rounded-xl border border-zinc-700 text-zinc-300 hover:text-zinc-100 hover:border-zinc-500 text-xs font-medium transition-colors">
-            <Pencil size={13} /> Modifier
-          </a>
-        )}
+        <a href={`/quotes/${quote.id}/edit`} className="flex items-center gap-2 px-3 py-2 rounded-xl border border-zinc-700 text-zinc-300 hover:text-zinc-100 hover:border-zinc-500 text-xs font-medium transition-colors">
+          <Pencil size={13} /> Modifier
+        </a>
         <button onClick={handleDuplicate} disabled={loading === 'duplicate'}
           className="flex items-center gap-2 px-3 py-2 rounded-xl border border-zinc-700 text-zinc-300 hover:text-zinc-100 text-xs font-medium transition-colors disabled:opacity-50">
           {loading === 'duplicate' ? <Loader2 size={13} className="animate-spin" /> : <Copy size={13} />} Dupliquer

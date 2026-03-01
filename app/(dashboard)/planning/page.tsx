@@ -46,7 +46,7 @@ export default async function PlanningPage() {
           ))}
         </div>
       </div>
-      <WeekCalendar interventions={interventions ?? []} userId={user!.id} />
+      <WeekCalendar interventions={interventions ?? []} />
     </div>
   )
 }

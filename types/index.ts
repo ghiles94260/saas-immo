@@ -17,7 +17,8 @@ export interface DiagnosticCatalog {
   code: string
   label: string
   description: string | null
-  default_price: number
+  default_price_ht: number
+  tva_rate: number
   is_active: boolean
 }
 
@@ -122,14 +123,14 @@ export interface Intervention {
   id: string
   user_id: string
   quote_id: string | null
-  scheduled_date: string
-  time_start: string
-  time_end: string
-  address: string
+  title: string
   client_name: string
-  diagnostics: string[]
-  technician_name: string | null
-  notes: string | null
+  property_address: string
+  intervention_date: string
+  start_time: string
+  end_time: string
   status: InterventionStatus
+  notes: string | null
   created_at: string
+  updated_at: string
 }

@@ -3,9 +3,10 @@ import { useWatch } from 'react-hook-form'
 import { useMemo } from 'react'
 import { formatCurrency } from '@/lib/utils'
 
-export function TaxSummary({ control }: { control: any }) {
-  const items   = useWatch({ control, name: 'quote_items' }) ?? []
-  const tvaRate = useWatch({ control, name: 'tva_rate' }) ?? 10
+export default function TaxSummary({ form }: { form: any }) {
+  const { control } = form
+  const items   = useWatch({ control, name: 'items' }) ?? []
+  const tvaRate = 20
 
   const { totalHT, montantTVA, totalTTC } = useMemo(() => {
     const totalHT = items.reduce((sum: number, item: any) =>

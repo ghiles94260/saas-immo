@@ -16,7 +16,7 @@ export default async function NewQuotePage() {
         <h1 className="text-2xl font-bold text-zinc-100">Nouveau devis</h1>
         <p className="text-sm text-zinc-400 mt-1">Sélectionnez les diagnostics — les recommandations s&apos;adaptent automatiquement.</p>
       </div>
-      <QuoteForm userId={user.id} catalog={catalog ?? []} />
+      <QuoteForm catalog={catalog ?? []} />
     </div>
   )
 }

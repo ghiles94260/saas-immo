@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
 import { PAYMENT_METHODS } from '@/lib/constants'
 
-export default function InvoiceActions({ invoice, profile }: { invoice: any; profile: any }) {
+export default function InvoiceActions({ invoice, profile }: { invoice: any; profile?: any }) {
   const router = useRouter()
   const supabase = createClient()
   const [loading,  setLoading]  = useState<string | null>(null)
